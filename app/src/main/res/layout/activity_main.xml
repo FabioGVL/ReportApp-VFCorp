@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"
+        android:text="VF CORP - Reporte de Incidentes"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/editDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Descreva o problema encontrado..."
+        android:minLines="3"
+        android:gravity="top"/>
+
+    <Button
+        android:id="@+id/btnCamera"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Capturar Evidência (Câmera)"
+        android:layout_marginTop="10dp"/>
+
+    <ImageView
+        android:id="@+id/imgPreview"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginTop="10dp"
+        android:background="#DDDDDD"
+        android:scaleType="centerInside"/>
+
+    <Button
+        android:id="@+id/btnSend"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enviar para Consultoria"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#2E7D32"/>
+</LinearLayout>
