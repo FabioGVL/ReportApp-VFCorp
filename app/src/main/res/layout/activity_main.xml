@@ -45,4 +45,13 @@
         android:text="Enviar para Consultoria"
         android:layout_marginTop="10dp"
         android:backgroundTint="#2E7D32"/>
+
+    <Button
+        android:id="@+id/btnPensarQA"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="PENSAR QA - ÁREA TÉCNICA"
+        android:backgroundTint="#2E2E2E"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="20dp" />
 </LinearLayout>
