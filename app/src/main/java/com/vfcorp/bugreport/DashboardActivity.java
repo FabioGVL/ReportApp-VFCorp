@@ -63,21 +63,19 @@ public class DashboardActivity extends AppCompatActivity {
             final int index = i;
             Report r = MainActivity.reportsEnviados.get(index);
 
-            // Força a análise apenas para o que não foi processado
             if (r.getPrioridade().equals("PENDENTE") || r.getPrioridade().equals("BAIXA")) {
                 Futures.addCallback(AITriageService.getTriage(r.getDescricao()), new FutureCallback<GenerateContentResponse>() {
                     @Override
                     public void onSuccess(GenerateContentResponse result) {
                         try {
                             String textResponse = result.getText();
-                            // Limpeza para garantir que pegamos apenas o JSON
+
                             if (textResponse.contains("{") && textResponse.contains("}")) {
                                 textResponse = textResponse.substring(textResponse.indexOf("{"), textResponse.lastIndexOf("}") + 1);
                             }
 
                             JSONObject json = new JSONObject(textResponse);
 
-                            // Atualiza diretamente na lista global usando o index
                             MainActivity.reportsEnviados.get(index).setPrioridade(json.optString("prioridade", "BAIXA").toUpperCase());
                             MainActivity.reportsEnviados.get(index).setSugestao(json.optString("sugestao_tecnica", "Verificar logs."));
 
